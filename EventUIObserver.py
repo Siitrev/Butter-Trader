@@ -1,0 +1,1 @@
+#dodasz konsolke w ktorej bedzie sie info wyswietlac
