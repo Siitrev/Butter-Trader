@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 import pygame_gui as pyg
-import pygame as py
 
 class UIObserver(ABC):
     def __init__(self, manager: pyg.UIManager):

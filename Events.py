@@ -3,28 +3,45 @@ from Market import Market
 from BoomState import BoomState
 from CrisisState import CrisisState
 import random
-
+import json
 
 class BoomEvent(IEvent):
     def happen(self):
         market = Market.getInstance()
-        market.setState(BoomState())
+        market.state = BoomState()
     
     def eventMessage(self):
-        return "BOOMO"
+        with open("./events_data.json") as event_info:
+            data = json.load(event_info)
+        message = random.choice(data["boom"])
+        return message
     
 class CrisisEvent(IEvent):
     def happen(self):
         market = Market.getInstance()
-        market.setState(CrisisState())
+        market.state = CrisisState()
     
     def eventMessage(self):
-        return "CRISISO"
+        with open("./events_data.json") as event_info:
+            data = json.load(event_info)
+        message = random.choice(data["crisis"])
+        return message
     
-class PriceChangeEvent(IEvent):
+class BasePriceChangeEvent(IEvent):
+    def __init__(self):
+        self._change = None
+        
     def happen(self):
         market = Market.getInstance()
-        market.price += random.uniform(-1.5, 1.5)
+        while not self._change:
+            self._change = random.uniform(-1, 1)
+        market.base_price += self._change
     
     def eventMessage(self):
-        return "PRICO"
+        with open("./events_data.json") as event_info:
+            data = json.load(event_info)
+        if self._change < 0:
+            message = data["priceChange"]["down"]
+        else:
+            message = data["priceChange"]["up"]
+        return message

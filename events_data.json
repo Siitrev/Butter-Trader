@@ -1,0 +1,26 @@
+{
+    "boom" : [
+        "<b>Maslo lekiem na wszystko<\/b>.\nNaukowcy z Polskiej Akadamii Nauk odkrywaja, ze maslo poprawia pamiec i koncentracje. Sprzedaz masla bije rekordy",
+        "<b>Maslowe swieto narodowe<\/b>.\nRzad oglasza nowy dzien wolny do pracy - Dzien Masla. Polacy swietuja, jedzac potrawy z maslem.",
+        "<b>Maslo cudnym prezentem<\/b>.\nLudzie zauwazaja, ze maslo jest idealnym prezentem okolicznosciowym, wiec jest wykupywane na potege.",
+        "<b>Szkoly przyjazne maslu.<\/b>\nRusza projekt edukacyjny, promujacy zalety masla w szkolach. Sprzedaz masla rosnie"
+    ],
+    "crisis" : [
+        "<b>Zwolnienie strategicznych rezerw masla.<\/b>\nRzad wpuszcza do obiegu strategiczne rezerwy masla, zmniejszajac tym jego cene.",
+        "<b>Maslowa afera.<\/b>\nMedia donosza o zlym traktowaniu krow o roznych kolorach skory w jednej z najwiekszych mleczarni. Ludzie w ramach buntu ograniczaja spozycie masla.",
+        "<b>Maslany rak.<\/b>\nPopularny dietetyk stwierdza, ze maslo jest przyczyna wszystkich chorob, ludzie masowo rezygnuja z masla.",
+        "<b>Bunt wegan.<\/b>\nNarodowe strajki weganskie podburzaja strategiczna pozycje masla, zniechecajac ludzi do jego kupna."
+    ],
+    "priceChange" : {
+        "down" : [
+            "<b>Maslowy boom technologiczny.<\/b>\nWynaleziono nowa metode produkcji masla, ktora jest tansza i szybsza.",
+            "<b>Maslane podziemie.<\/b>\nW podziemiu utworzyl sie maslany ruch oporu, wprowadzajacy do obiegu nielegalne maslo. Rynek reaguje i obniza ceny masla.",
+            "<b>Import tanszego masla.<\/b>\nNaplyw taniego masla z zagranicy obniza cene krajowego masla."
+        ],
+        "up" : [
+            "<b>Nowe regulacje UE.<\/b>\nUnia Europejska wprowadza nowe standardy produkcji masla, ktore podnosza koszta produkcji.",
+            "<b>Bunt krow.<\/b>\nNiektore krowy domagaja sie lepszych warunkow pracy i rezygnuja z produkcji mleka.",
+            "<b>Zmiany w polityce rolnej.<\/b>\nRzad obniza dotacje dla mleczarzy. Produkcja masla staje sie drozsza."
+        ]
+    }
+}

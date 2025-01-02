@@ -5,8 +5,5 @@ if TYPE_CHECKING:
     from IMarketState import IMarketState
 
 class IPriceStrategy(ABC):
-    def updatePrice(self, current_price: float) -> float:
-        pass
-    
-    def adjustParameters(self, state: "IMarketState"):
+    def updatePrice(self, prev_price: float) -> float:
         pass

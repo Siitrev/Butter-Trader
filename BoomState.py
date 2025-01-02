@@ -5,19 +5,19 @@ import random
 
 class BoomState(IMarketState):
     def __init__(self):
-        self.days = 1
+        self.weeks = 0
     
     def onEnter(self):
         market = Market.getInstance()
-        sigma = random.uniform(0.1, 0.3)
-        strategy = GeometricBrownianMotionStrategy(0.07, sigma, 1/10)
-        market.setStrategy(strategy)
+        sigma = 0.00908
+        strategy = GeometricBrownianMotionStrategy(0.1, sigma)
+        market.strategy = strategy
     
     def update(self):
         from NormalState import NormalState
         market = Market.getInstance()
         chance = random.random()
-        if chance < 0.05 + (self.days/20):
-            market.setState(NormalState())
+        if chance < self.weeks/20:
+            market.state = NormalState()
             
-        self.days += 1
+        self.weeks += 1
