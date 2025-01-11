@@ -179,7 +179,7 @@ class Simulation():
                     
                     if self.market.state.__class__.__name__ == "NormalState":
                         chance = random.random()
-                        if chance < 0.20:
+                        if chance < 0.1:
                             event = self.eventFactory.getRandomEvent()
                             event.happen()
                             self.current_dialog = self.showEventDialog(event.eventMessage())

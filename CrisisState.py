@@ -9,15 +9,15 @@ class CrisisState(IMarketState):
     
     def onEnter(self):
         market = Market.getInstance()
-        sigma = 0.00908
-        strategy = GeometricBrownianMotionStrategy(-0.1, sigma)
+        sigma = 0.5
+        strategy = GeometricBrownianMotionStrategy(-5, sigma)
         market.strategy = strategy
     
     def update(self):
         from NormalState import NormalState
         market = Market.getInstance()
         chance = random.random()
-        if chance < self.weeks/20:
+        if chance < self.weeks/25:
             market.state = NormalState()
             
         self.weeks += 1

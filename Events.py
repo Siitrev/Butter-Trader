@@ -41,7 +41,7 @@ class BasePriceChangeEvent(IEvent):
         with open("./events_data.json") as event_info:
             data = json.load(event_info)
         if self._change < 0:
-            message = data["priceChange"]["down"]
+            message = random.choice(data["priceChange"]["down"])
         else:
-            message = data["priceChange"]["up"]
+            message = random.choice(data["priceChange"]["up"])
         return message

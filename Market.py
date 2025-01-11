@@ -125,8 +125,11 @@ class Market:
             oldest_week = weeks[0]
         
         fig, ax = plt.subplots(figsize=(9, 4), dpi=100)
+        
+        fig.patch.set_alpha(0)
+        ax.set_facecolor('none')
  
-        ax.plot(weeks, prices, marker='o', linestyle='-', color='blue', linewidth=2)  
+        ax.plot(weeks, prices, marker='o', linestyle='-', color='#C2A26E', linewidth=2)  
     
         ax.set_ylim(self.__min_price, self.__max_price)  
     
@@ -141,6 +144,19 @@ class Market:
         ax.set_ylabel("Cena")  
         
         plt.xticks(np.arange(oldest_week, latest_week + 1, 1))
+        
+        primary = '#004218' 
+        ax.spines['bottom'].set_color(primary)
+        ax.spines['top'].set_color(primary)   
+        ax.spines['left'].set_color(primary)  
+        ax.spines['right'].set_color(primary) 
+ 
+        secondary = '#329757'
+        ax.tick_params(axis='x', colors=secondary)  
+        ax.tick_params(axis='y', colors=secondary)  
+
+        ax.xaxis.label.set_color(secondary) 
+        ax.yaxis.label.set_color(secondary) 
         
         canvas = FigureCanvasAgg(fig)
         canvas.draw()
