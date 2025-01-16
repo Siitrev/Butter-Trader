@@ -179,7 +179,7 @@ class Simulation():
                     
                     if self.market.state.__class__.__name__ == "NormalState":
                         chance = random.random()
-                        if chance < 0.1:
+                        if chance < 0.15:
                             event = self.eventFactory.getRandomEvent()
                             event.happen()
                             self.current_dialog = self.showEventDialog(event.eventMessage())
@@ -187,14 +187,14 @@ class Simulation():
                     self.market.update(self.current_week)
                     
                     self.current_week += 1
-                    trigger_update += 2
+                    trigger_update += 3
                     self.sell_value_label.set_text(f"{(self.sell_slider.get_current_value() * self.market.price):.2f} PLN")
                     self.buy_value_label.set_text(f"{(self.buy_slider.get_current_value() * self.market.price):.2f} PLN")
                     
                     if self.current_week % 52 == 0:
                         if not self.player.payRent():
                             self.running = False
-                        self.market.base_price *= random.uniform(1.01, 1.08)
+                        self.market.base_price *= random.uniform(0.97, 1.06)
             else:
                 if not hasattr(self, 'pause_time'):
                     self.pause_time = time.time()
